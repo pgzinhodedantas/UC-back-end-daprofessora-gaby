@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ nome }}</title>
+</head>
+<body>
+
+    <h1>{{ nome }}</h1>
+
+    <img src="{{ url_for('static', filename=imagem) }}"
+         width="300">
+
+         <img src="{{ url_for('static', filename='imagens/calabresa.jpg') }}"
+              width="150">
+              
+</body>
+</html>
