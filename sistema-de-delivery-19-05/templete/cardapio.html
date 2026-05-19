@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1 class="mb-2">Cardápio do dia</h1>
+<p class="text-muted">Escolha um produto para ver mais detalhes.</p>
+
+<div class="row">
+    {% for codigo, item in produtos.items() %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 card-produto">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nome }}</h5>
+                <p class="card-text">{{ item.descricao }}</p>
+                <p class="preco">{{ item.preco }}</p>
+                <a href="/produto/{{ codigo }}" class="btn btn-laranja w-100">Quero ver</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

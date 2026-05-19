@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Contato</h1>
+<p class="text-muted">Preencha o formulário abaixo para simular o contato com o delivery.</p>
+
+<form class="card p-4 card-formulario">
+    <div class="mb-3">
+        <label class="form-label">Seu nome</label>
+        <input type="text" class="form-control" placeholder="Ex: Daniel">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">WhatsApp</label>
+        <input type="text" class="form-control" placeholder="(84) 99999-9999">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mensagem</label>
+        <textarea class="form-control" rows="4" placeholder="Escreva sua dúvida ou sugestão"></textarea>
+    </div>
+
+    <button class="btn btn-laranja" type="button">Enviar mensagem</button>
+</form>
+{% endblock %}

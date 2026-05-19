@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<section class="banner p-5 rounded-4 text-center">
+    <p class="mb-1">Delivery fictício para atividade de Flask</p>
+    <h1 class="display-5 fw-bold">Comida simples, gostosa e sem enrolação</h1>
+    <p class="lead">Aqui o cliente escolhe o produto, vê os detalhes e acompanha pedidos simulados.</p>
+    <a href="/cardapio" class="btn btn-claro btn-lg mt-2">Ver opções do cardápio</a>
+</section>
+
+<div class="alert alert-warning mt-4 text-center rounded-4">
+    🔥 Promoção da semana: peça um combo e ganhe desconto no suco.
+</div>
+
+<div class="row mt-4 text-center">
+    <div class="col-md-4 mb-3">
+        <div class="caixa-info">
+            <h4>🍴 Cardápio direto</h4>
+            <p>Produtos simples, com nome, preço e descrição.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="caixa-info">
+            <h4>🛵 Entrega local</h4>
+            <p>A rota do cliente mostra se o bairro é atendido.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="caixa-info">
+            <h4>📋 Pedidos</h4>
+            <p>Uma tabela simples para simular pedidos recentes.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
