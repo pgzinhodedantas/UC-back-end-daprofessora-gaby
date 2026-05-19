@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+{% if item %}
+<div class="card card-detalhe p-4">
+    <h1>{{ item.nome }}</h1>
+    <p class="lead">{{ item.descricao }}</p>
+    <h3 class="preco">{{ item.preco }}</h3>
+
+    <div class="alert alert-light border mt-3">
+        {{ item.destaque }}
+    </div>
+
+    <a href="/cardapio" class="btn btn-outline-secondary">Voltar para o cardápio</a>
+</div>
+{% else %}
+<div class="alert alert-danger rounded-4">
+    Ops... esse produto não apareceu no nosso cardápio.
+</div>
+<a href="/cardapio" class="btn btn-laranja">Voltar</a>
+{% endif %}
+{% endblock %}

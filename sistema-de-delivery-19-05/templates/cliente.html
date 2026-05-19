@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Oi, {{ nome }}!</h1>
+<p>O bairro informado foi: <strong>{{ bairro }}</strong></p>
+
+{% if atende_bairro %}
+<div class="alert alert-success rounded-4">
+    Boa notícia! O Sabor Rápido entrega nesse bairro. 🛵
+</div>
+{% else %}
+<div class="alert alert-warning rounded-4">
+    Ainda não entregamos nesse bairro, mas quem sabe em breve.
+</div>
+{% endif %}
+{% endblock %}
