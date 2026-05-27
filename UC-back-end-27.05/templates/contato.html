@@ -1,0 +1,26 @@
+{% include 'base.html' %}
+{% block conteudo %}
+<main style="
+    max-width: 900px;
+    margin: 40px auto;
+    background: #f5f4f4;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(26,35,126,0.07);
+    min-height: 400px;
+">
+    <h1>Contato</h1>
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+{% endblock %}

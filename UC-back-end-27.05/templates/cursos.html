@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Cursos - TechFuture{% endblock %}
+<div class="container">
+    {% block conteudo %}
+    <h1>Cursos da TechFuture</h1>
+    <p>Bem-vindo à página de cursos da TechFuture. Aqui você encontrará uma lista detalhada dos nossos cursos oferecidos, com informações sobre duração, público-alvo e principais tópicos abordados.</p>
+    <ul>
+        <li>
+            <h3>Curso de Desenvolvimento Web</h3>
+            <p><strong>Duração:</strong> 6 meses</p>
+            <p><strong>Público-alvo:</strong> Iniciantes e interessados em programação web</p>
+            <p><strong>Conteúdo:</strong> HTML, CSS, JavaScript, Django, bancos de dados, deploy de aplicações</p>
+        </li>
+        <li>
+            <h3>Curso de Data Science</h3>
+            <p><strong>Duração:</strong> 8 meses</p>
+            <p><strong>Público-alvo:</strong> Profissionais e estudantes interessados em análise de dados</p>
+            <p><strong>Conteúdo:</strong> Python, Pandas, Machine Learning, visualização de dados, projetos práticos</p>
+        </li>
+        <li>
+            <h3>Curso de Inteligência Artificial</h3>
+            <p><strong>Duração:</strong> 10 meses</p>
+            <p><strong>Público-alvo:</strong> Desenvolvedores e entusiastas de IA</p>
+            <p><strong>Conteúdo:</strong> Redes neurais, Deep Learning, NLP, frameworks como TensorFlow e PyTorch</p>
+        </li>
+        <li>
+            <h3>Curso de Segurança da Informação</h3>
+            <p><strong>Duração:</strong> 5 meses</p>
+            <p><strong>Público-alvo:</strong> Profissionais de TI e interessados em cibersegurança</p>
+            <p><strong>Conteúdo:</strong> Criptografia, análise de vulnerabilidades, políticas de segurança, LGPD</p>
+        </li>
+    </ul>
+    <hr>
+    <h2>Por que escolher a TechFuture?</h2>
+    <ul>
+        <li>Instrutores experientes no mercado</li>
+        <li>Material didático atualizado</li>
+        <li>Projetos práticos e mentorias</li>
+        <li>Certificado reconhecido</li>
+    </ul>
+    <p>Para mais informações ou para se inscrever, entre em contato conosco pelo <a href="mailto:contato@techfuture.com">contato@techfuture.com</a>.</p>
+    {% endblock %}
+</div>
