@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="box">
+    {% if erros %}
+        {% for e in erros %}<div class="erro">{{ e }}</div>{% endfor %}
+    {% endif %}
+    
+    {% if sucesso %}
+        <div class="ok">
+            <h2>✓ Cadastro OK!</h2>
+            <div class="dados">
+                <p><b>Nome:</b> {{ nome }}</p>
+                <p><b>Email:</b> {{ email }}</p>
+                <p><b>Telefone:</b> {{ telefone }}</p>
+                <p><b>CPF:</b> {{ cpf }}</p>
+                <p><b>Cidade:</b> {{ cidade }}</p>
+                <p><b>Estado:</b> {{ estado }}</p>
+                <p><b>Curso:</b> {{ curso }}</p>
+                <p><b>Idade:</b> {{ idade }} anos</p>
+            </div>
+        </div>
+    {% else %}
+        <form method="POST">
+            <h2>Cadastro de Aluno</h2>
+            
+            <div class="input-group">
+                <label>Nome:</label>
+                <input type="text" name="nome" placeholder="Seu nome completo">
+            </div>
+            
+            <div class="input-group">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="seu@email.com">
+            </div>
+            
+            <div class="input-group">
+                <label>Telefone:</label>
+                <input type="text" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+            
+            <div class="input-group">
+                <label>CPF:</label>
+                <input type="text" name="cpf" placeholder="000.000.000-00">
+            </div>
+            
+            <div class="input-group">
+                <label>Cidade:</label>
+                <input type="text" name="cidade" placeholder="Sua cidade">
+            </div>
+            
+            <div class="input-group">
+                <label>Estado:</label>
+                <input type="text" name="estado" placeholder="UF" maxlength="2">
+            </div>
+            
+            <div class="input-group">
+                <label>Curso:</label>
+                <select name="curso">
+                    <option value="">Selecione um curso</option>
+                    <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                    <option value="Redes de Computadores">Redes de Computadores</option>
+                    <option value="Informática">Informática</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label>Idade:</label>
+                <input type="number" name="idade" placeholder="Sua idade">
+            </div>
+            
+            <div class="input-group">
+                <label>Senha:</label>
+                <input type="password" name="senha" placeholder="Mínimo 8 caracteres">
+            </div>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    {% endif %}
+</div>
+</body>
+</html>
