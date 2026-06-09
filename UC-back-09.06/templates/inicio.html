@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="{% if theme == 'escuro' %}dark{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferências de Usuário</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <div class="card">
+            <h1 class="h1">
+                {% if name %}
+                    Bem-vindo, {{ name }}!
+                {% else %}
+                    Bem-vindo!
+                {% endif %}
+            </h1>
+
+            <p class="text-muted">
+                Gerencie suas preferências de usuário.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 class="h2">Nome do Usuário</h2>
+
+            <form action="{{ url_for('set_name') }}" method="post">
+                <input
+                    type="text"
+                    name="name"
+                    value="{{ name or '' }}"
+                    placeholder="Digite seu nome"
+                >
+
+                <button type="submit" class="btn-primary">
+                    Salvar Nome
+                </button>
+            </form>
+
+            <form action="{{ url_for('set_name') }}" method="post">
+                <input type="hidden" name="name" value="">
+
+                <button type="submit" class="btn-ghost">
+                    Remover Nome
+                </button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2 class="h2">Tema da Aplicação</h2>
+
+            <p class="text-muted">
+                Tema atual: <strong>{{ theme }}</strong>
+            </p>
+
+            <form action="{{ url_for('set_theme') }}" method="post">
+                <select name="theme">
+                    <option value="claro"
+                        {% if theme == 'claro' %}selected{% endif %}>
+                        Claro
+                    </option>
+
+                    <option value="escuro"
+                        {% if theme == 'escuro' %}selected{% endif %}>
+                        Escuro
+                    </option>
+                </select>
+
+                <button type="submit" class="btn-primary">
+                    Aplicar Tema
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
