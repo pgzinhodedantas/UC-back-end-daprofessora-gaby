@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Meus Favoritos</h1>
+
+    <p>{{ produto.nome }} - R$ {{ produto.preco }}</p>
+
+    <a href="{{ url_for('remover_favorito', id=produto.id) }}">
+        Remover
+    </a>
+
+    <hr>
+
+</body>
+</html>
