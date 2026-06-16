@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Painel de Controle</title>
+</head>
+<body>
+    <div class="container painel">
+        <header class="painel-cabecalho">
+            <h1>Painel de Controle</h1>
+            <p class="subtitulo">Área restrita — acesse suas configurações e relatórios</p>
+        </header>
+
+        <main class="painel-conteudo">
+            <section class="cartao">
+                <h2>Bem-vindo, {{ session.get('username') | e }}!</h2>
+                <p>Você está autenticado. Use os botões abaixo para gerenciar sua conta ou encerrar a sessão com segurança.</p>
+
+                <div class="acoes">
+                    <a href="{{ url_for('base') }}" class="btn btn-outline" role="button" aria-label="Sair">Sair</a>
+                    <a href="{{ url_for('') }}" class="btn btn-primary" role="button" aria-label="Configurações">Configurações</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

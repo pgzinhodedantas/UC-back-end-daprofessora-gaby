@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="styles" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Sistema de Autenticação</h1>
+            <nav aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('login.html') }}">Início</a></li>
+                    <li><a href="{{ url_for('login.html') }}" class="btn btn-primary">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Autenticação segura e intuitiva</h2>
+            <p class="lead">Uma solução simples e confiável para gerenciar acessos à sua aplicação.</p>
+            <p class="actions">
+                <a href="{{ url_for('login.html') }}" class="btn btn-primary">Acessar minha conta</a>
+            </p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Confiável</h3>
+                <p>Implementa boas práticas de autenticação e gerenciamento de sessão.</p>
+            </div>
+            <div class="feature">
+                <h3>Responsivo</h3>
+                <p>Interface adaptável para desktop e dispositivos móveis.</p>
+            </div>
+            <div class="feature">
+                <h3>Fácil de integrar</h3>
+                <p>Estrutura simples que facilita a integração com seu projeto Flask.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Seu Nome</p>
+    </footer>
+</body>
+</html>

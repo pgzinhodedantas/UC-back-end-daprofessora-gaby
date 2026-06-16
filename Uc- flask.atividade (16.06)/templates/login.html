@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container card login-card">
+        <header class="card-header">
+            <h2 class="title">Login</h2>
+            <p class="subtitle">Acesse sua conta com segurança</p>
+        </header>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alerts" role="region" aria-live="polite">
+                    {% for message in messages %}
+                        <div class="alert" role="alert">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}" class="login-form" novalidate>
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                    placeholder="Digite seu usuário"
+                    required
+                    autocomplete="username"
+                    autofocus
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Digite sua senha"
+                    required
+                    autocomplete="current-password"
+                    minlength="6"
+                >
+            </div>
+
+            <div class="form-row form-actions">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="remember" id="remember"> Lembrar-me
+                </label>
+                <a href="{{ url_for('forgot_password') }}" class="link-forgot">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="{{ url_for('index') }}">Registre-se aqui</a></p>
+    </div>
+</body>
+</html>
