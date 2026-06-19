@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🍔 Cardápio Digital</h1>
+        <p class="ia">Conteúdo gerado por IA</p>
+    </header>
+
+    <section class="produtos">
+        {% for produto in cardapio %}
+        <div class="card">
+            <h2>{{ produto.nome }}</h2>
+            <p class="preco">R$ {{ "%.2f"|format(produto.preco) }}</p>
+
+            <a href="{{ url_for('favoritar', id=produto.id) }}">
+                <button>⭐ Favoritar</button>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="favoritos">
+        <h2>⭐ Favoritos</h2>
+
+        {% if favoritos %}
+            <ul>
+                {% for item in favoritos %}
+                <li>
+                    {{ item }}
+                    <a href="{{ url_for('remover', nome=item) }}">
+                        ❌
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <a href="{{ url_for('zerar') }}">
+                <button class="limpar">Limpar Favoritos</button>
+            </a>
+
+        {% else %}
+            <p>Nenhum favorito cadastrado.</p>
+        {% endif %}
+    </section>
+
+</div>
+
+</body>
+</html>
